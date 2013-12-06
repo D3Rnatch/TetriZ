@@ -1,0 +1,28 @@
+MPASM  5.50                       DELAYD1.ASM   12-6-2013  12:03:20         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001 DELAYDAT1      UDATA_ACS
+                      00002 
+000000                00003 DelayCounter1  RES 1
+                      00004 
+  0000                00005                GLOBAL DelayCounter1
+                      00006             
+                      00007                END
+MPASM  5.50                       DELAYD1.ASM   12-6-2013  12:03:20         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+DelayCounter1                     00000000
+__18F4550                         00000001
+__DEBUG                           1
+
+Errors   :     0
+Warnings :     0 reported,     0 suppressed
+Messages :     0 reported,     0 suppressed
+
+
