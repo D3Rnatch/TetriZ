@@ -1,5 +1,24 @@
-#include "gameTetris.h"
+
 #include "gameEngine.h"
+
+
+		///////////////////////////////////////////////////////////
+		// MOVING OBJECTS ROUTINES
+		// USER ENTRY ROUTINE
+		//////////////////////////////////////////////////////////
+
+
+		// Moving the Object into the screen
+		void moveObject();
+		void moveObjectLateral(unsigned char dir);
+
+		unsigned char calculateTMP(unsigned char y);
+		char testLine(unsigned char x, unsigned char y);
+		void scrollObject();
+		void validateLines(unsigned char y);
+
+		// Read user Entry
+		unsigned char readUserEntry();
 
 void moveObject()
 {
@@ -35,14 +54,21 @@ void moveObject()
 
 void scrollObject()
 {
-	eraseObjectFromMap();
-	mapi.ob.y++;
-	printObjectOnMap();
+	if(mapi.ob.y > 5)
+		mapi.ob = generateObject(rand()%4);
+	else{
+		eraseObjectFromMap();    
+		mapi.ob.y++;
+	}
 }
 
 char testLine(unsigned char y, unsigned char tmp)
 {
-	return tmp << y%8;
+	return '0';
+}
+unsigned char calculateTMP(unsigned char j)
+{
+	return 0x01 << j%8;
 }
 
 void validateLines(unsigned char y)
@@ -52,5 +78,9 @@ void validateLines(unsigned char y)
 
 unsigned char readUserEntry()
 {
-	// NOT IMPLEMENTED YET
+	if (PORTAbits.RA0)
+	{
+		mapi.ob.x++;
+		eraseObjectFromMap();
+	}
 }

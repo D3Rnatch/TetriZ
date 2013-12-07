@@ -1,7 +1,6 @@
-#include "gameTetris.h"
-#include "ks108.h"
+
 #include "affichageGLCD.h"
-#include <delays.h>
+
 
 
 /******************************************* Display on the SCREEN ********************************************/
@@ -75,7 +74,7 @@ unsigned char eraseObjectFromMap ()
  {
   for(j=0;j<TOBJECT;j++){
    if(mapi.ob.x+i<NBLOCKS_W && mapi.ob.y+j<NBLOCKS_H){
-    mapi.tab[mapi.ob.x+i][findPage(mapi.ob.y+j)]=mapi.tab[mapi.ob.x+i][findPage(mapi.ob.y+j)]&findBitOnPage(mapi.ob.y+j,n+j,pos);
+    mapi.tab[mapi.ob.x+i][findPage(mapi.ob.y+j)]=mapi.tab[mapi.ob.x+i][findPage(mapi.ob.y+j)]^findBitOnPage(mapi.ob.y+j,n+j,pos);
    }
    else
     success=0;
@@ -104,7 +103,7 @@ void displayBlock(unsigned char posx,unsigned char posy,unsigned char color)
  }
 }
 
- //test if a bit is set to 1 on the page and return the position
+ //test if a bit is set to 1 on the page and returns the position
  //this function need the column where it's working so the x-asis and the page
  //and the position you want test
  unsigned char testPositionBit(char x,char page,char bpos)
@@ -127,7 +126,6 @@ void displayBlock(unsigned char posx,unsigned char posy,unsigned char color)
   unsigned char p=0;
   unsigned char pos=0;
 
-
   for(i=0;i<8;i++)
   {
    p=testPositionBit(x,page,i);
@@ -138,7 +136,6 @@ void displayBlock(unsigned char posx,unsigned char posy,unsigned char color)
     displayBlock(px,py,1);
    else
      displayBlock(px,py,0);
-
   }
  }
 

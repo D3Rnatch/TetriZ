@@ -1,5 +1,8 @@
-#ifndef gameEngine_H
-#define gameEngine_H
+#ifndef __Engine_H
+#define __Engine_H
+
+#include "gameTetris.h"
+#include "affichageGLCD.h"
 
 ///////////////////////////////////////////////////////////
 		// MOVING OBJECTS ROUTINES

@@ -1,7 +1,11 @@
-#ifndef AFF8GLCD
-#define AFF8GLCD		 
+#ifndef __AFF8GLCD
+#define __AFF8GLCD		 
 
-		void initialiseMap();
+#include "gameTetris.h"
+#include "ks108.h"
+#include <delays.h>
+
+		 void initialiseMap();
          Object generateObject(char type);
          Object drawSquare();
          Object drawL();

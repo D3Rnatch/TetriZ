@@ -1,4 +1,7 @@
 
+#include <stdio.h>
+#include <math.h>
+
 #define RS  RC0
 #define RW RC1
 #define EN  RC2

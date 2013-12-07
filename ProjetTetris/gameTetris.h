@@ -1,4 +1,5 @@
-
+#ifndef __RESS_TETRIS_H
+#define __RESS_TETRIS_H
 
 
        /**                MEMORY ORGANISATION : RAM (size 128o)
@@ -62,8 +63,7 @@
 
         //la map est une variable globale
         //elle servira pour toutes les fonctions
-          extern Map mapi;
-
-		
+        extern Map mapi;
+#endif		
 		
 
